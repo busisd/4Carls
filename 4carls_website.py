@@ -9,6 +9,14 @@ def frontpage_defaults():
 	global port
 	return flask.render_template('4carls_frontpage.html', page_num=1, api_port=api_port, port=port)
 	
+@app.route('/secretpage')
+def secretpage():
+	return flask.render_template('4carls_secretpage.html')
+
+@app.route('/blog')
+def blogpage():
+	return flask.render_template('4carls_blog.html')
+
 @app.route('/<pagenum>')
 def frontpage_pagenum(pagenum):
 	global api_port

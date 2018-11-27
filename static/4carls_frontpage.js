@@ -56,13 +56,11 @@ function create_post() {
 	username_box = document.getElementById('Username-Box')
 	if (submit_post_box && username_box) {
 		make_post_url = getAPIURL() + '/put_post?';
-		contents_list = submit_post_box.value.split(/[(\r\n)\r\n]/);
+		contents_list = submit_post_box.value.split(/[\r\n]/);
 		if (contents_list.length>1 || contents_list[0]!==""){
 			for (i=0; i<contents_list.length; i++){
 				cur_contents = contents_list[i];
-				cur_contents = encodeURI(cur_contents)
-				cur_contents = cur_contents.replace("&", "%26")
-				cur_contents = cur_contents.replace("+", "%2B")
+				cur_contents = encodeURIComponent(cur_contents)
 				make_post_url += "contents="+cur_contents+"&"
 			}
 			username = username_box.value;
@@ -106,7 +104,7 @@ function load_footer() {
 				switch_page_html += '[<a href="'+getSiteURL()+'/'+(page_num-1)+'">Back</a>]';
 			}
 			if (page_num < total_pages) {
-				console.log(page_num, total_pages);
+				// console.log(page_num, total_pages);
 				switch_page_html += '[<a href="'+getSiteURL()+'/'+(page_num+1)+'">Next</a>]';
 			}
 			switch_page_buttons.innerHTML=switch_page_html;
