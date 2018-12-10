@@ -8,6 +8,16 @@ function initialize(){
 	if (submit_post_button) {
 		submit_post_button.onclick=create_post;
 	}
+	username_box = document.getElementById('Username-Box')
+	if (username_box) {
+		username = sessionStorage.username;
+		
+		if (username !== undefined){
+			username_box.value = username;
+		}
+	}
+	
+	setInterval(load_posts, 5000);
 }
 
 function getAPIURL() {
@@ -75,8 +85,14 @@ function create_post() {
 			//console.log(['↵', '\u21b5']);
 			//console.log(submit_post_box.value.split('\u21b5'))
 			//console.log(submit_post_box.value.split(/[(\r\n)\r\n]/))
+			
+			save_session_username(username);
 		}
 	}
+}
+
+function save_session_username(username){
+	sessionStorage.username = username;
 }
 
 function load_footer() {
@@ -91,7 +107,7 @@ function load_footer() {
 			total_pages = Math.floor((post_count-1)/post_count_per_page)+1;
 			footer_html = ''
 			for (i=1;i<=total_pages;i++) {
-				number_link_html = '<a href="'+getSiteURL()+'/'+i+'">'+i+'</a>'
+				number_link_html = '<a href="'+getSiteURL()+'/forum/'+i+'">'+i+'</a>'
 				if (i === page_num){
 					number_link_html = '<b>'+i+'</b>'
 				}
@@ -101,11 +117,11 @@ function load_footer() {
 			
 			switch_page_html = ''
 			if (page_num > 1){
-				switch_page_html += '[<a href="'+getSiteURL()+'/'+(page_num-1)+'">Back</a>]';
+				switch_page_html += '[<a href="'+getSiteURL()+'/forum/'+(page_num-1)+'">Back</a>]';
 			}
 			if (page_num < total_pages) {
 				// console.log(page_num, total_pages);
-				switch_page_html += '[<a href="'+getSiteURL()+'/'+(page_num+1)+'">Next</a>]';
+				switch_page_html += '[<a href="'+getSiteURL()+'/forum/'+(page_num+1)+'">Next</a>]';
 			}
 			switch_page_buttons.innerHTML=switch_page_html;
 		})

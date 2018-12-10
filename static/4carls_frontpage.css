@@ -2,45 +2,77 @@ body {
 	background-color:#EEEEFF;
 }
 
-.Post-Box {
-	display:table;
-	min-width:400px;
-	max-width:70%;
-	margin:10px;
-	padding:10px;
-	border:1px solid #a4a4da;
+#Grid-Div {
+    display: grid;
+    grid-template-columns: 5% 1fr 5% 1fr 5% 1fr 5% 1fr 5%;
+	grid-template-rows: 20px 50px 20px 50px auto;
+}
+
+#Title {
+	grid-column: 4 / 7;
+	grid-row: 2 / 3;
+}
+
+#Forum {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+}
+
+#Canvas {
+	grid-column: 4 / 5;
+	grid-row: 4 / 5;
+}
+
+#Blog {
+	grid-column: 6 / 7;
+	grid-row: 4 / 5;
+}
+
+#Secretpage {
+	grid-column: 8 / 9;
+	grid-row: 4 / 5;
+}
+
+.Title-Box {
+	border: 1px solid #a4a4da;
 	border-left:none;
 	border-top:none;
 	background-color:#DDDDFF;
-}
-
-.Post-Content-Line-Green {
-	color: green
-}
-
-.Submit-Post-Div {
-	margin:10px;
-	width:420px;
-}
-
-.Post-ID {
-	font-size:10pt;
-}
-
-.Post-Username {
-	font-weight:bold;
-}
-
-#Submit-Post-Box {
-	width:410px;
-	height:100px;
-}
-
-#Submit-Post-Button {
-	float:right;
-}
-
-#Footer-Div {
-	background-color:#CCCCFF;
 	padding:10px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16pt;
 }
+
+a.Button:link {
+	text-decoration: none;
+}
+
+a.Button:link {
+	background-color:#DDDDFF;
+	color:black;
+}
+
+a.Button:visited {
+	color:black;
+}
+
+a.Button:hover {
+	background-color:#E5E5FF;
+	color:black;
+}
+
+a.Button:active {
+	background-color:#222244;
+	color:white;
+}
+
+.Button {
+	border: 1px solid #a4a4da;
+	border-left:none;
+	border-top:none;
+	padding:10px;
+	text-align: center;
+	font-weight: bold;
+}
+

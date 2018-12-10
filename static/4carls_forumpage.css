@@ -1,0 +1,46 @@
+body {
+	background-color:#EEEEFF;
+}
+
+.Post-Box {
+	display:table;
+	min-width:400px;
+	max-width:70%;
+	margin:10px;
+	padding:10px;
+	border:1px solid #a4a4da;
+	border-left:none;
+	border-top:none;
+	background-color:#DDDDFF;
+}
+
+.Post-Content-Line-Green {
+	color: green
+}
+
+.Submit-Post-Div {
+	margin:10px;
+	width:420px;
+}
+
+.Post-ID {
+	font-size:10pt;
+}
+
+.Post-Username {
+	font-weight:bold;
+}
+
+#Submit-Post-Box {
+	width:410px;
+	height:100px;
+}
+
+#Submit-Post-Button {
+	float:right;
+}
+
+#Footer-Div {
+	background-color:#CCCCFF;
+	padding:10px;
+}

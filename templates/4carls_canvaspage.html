@@ -1,0 +1,35 @@
+<!Doctype html>
+<html style="background-color: #EEEEFF">
+<head>
+	<title>4Carls</title>
+	<script type="text/javascript" src="{{ url_for('static', filename='4carls_canvaspage.js') }}" defer></script>
+	<link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+	<div id="box" style="width:500px; height:500px;">
+		
+	</div>
+	
+	<br>
+	
+	<!-- <div style="display: inline-block;"> -->
+		<!-- <div class="colorbutton" style="background-color: blue; width:40px; height:20px;float:left;"></div> -->
+		<!-- <div class="colorbutton" style="background-color: red; width:40px; height:20px;float:left;"></div> -->
+		<!-- <div class="colorbutton" style="background-color: green; width:40px; height:20px;float:left;"></div> -->
+		<!-- <div class="colorbutton" style="background-color: orange; width:40px; height:20px;float:left;"></div> -->
+	<!-- </div> -->
+
+	<div id="slidercontainer">
+		<input type="range" min="0" max="255" value="255" class="slider" id="rRange">
+		<span>R: <span id="rSpan"></span></span><br>
+		<input type="range" min="0" max="255" value="255" class="slider" id="gRange">
+		<span>G: <span id="gSpan"></span></span><br>
+		<input type="range" min="0" max="255" value="255" class="slider" id="bRange">
+		<span>B: <span id="bSpan"></span></span><br>
+	</div>
+	<div id="colorshow" style="width:100px; height:40px;">
+	</div>
+</body>
+
+</html>

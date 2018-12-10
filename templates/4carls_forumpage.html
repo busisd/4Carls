@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+	<title>4Carls</title>
+	<script type="text/javascript"> var api_port = {{ api_port }} </script>
+	<script type="text/javascript"> var port = {{ port }} </script>
+	<script type="text/javascript"> var page_num = {{ page_num }} </script>
+	<script type="text/javascript" src="{{ url_for('static', filename='4carls_forumpage.js') }}" defer></script>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='4carls_forumpage.css') }}" />
+	<link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+	<div class="Submit-Post-Div">
+		<textarea id="Submit-Post-Box"></textarea><br>
+		<span>Username: </span>
+		<input type="text" id="Username-Box" placeholder="Anon" maxlength="20" />
+		<button id="Submit-Post-Button">Submit Post</button>
+	</div>
+	<div id="Posts-Div">Loading posts...</div>
+	<div id="Footer-Div">
+		<span id="Switch-Page-Buttons"></span>
+		<span> | </span>
+		<span id="Page-Num-Span"></span>
+	</div>
+</body>
+
+</html>
