@@ -5,7 +5,7 @@ body {
 #Grid-Div {
     display: grid;
     grid-template-columns: 5% 1fr 5% 1fr 5% 1fr 5% 1fr 5%;
-	grid-template-rows: 20px 50px 20px 50px auto;
+	grid-template-rows: 20px auto 20px auto 20px auto auto;
 }
 
 #Title {
@@ -31,6 +31,27 @@ body {
 #Secretpage {
 	grid-column: 8 / 9;
 	grid-row: 4 / 5;
+}
+
+
+#Github-Personal {
+	grid-column: 2 / 3;
+	grid-row: 6 / 7;
+}
+
+#Github-CS257 {
+	grid-column: 4 / 5;
+	grid-row: 6 / 7;
+}
+
+#Twitch-Emotes {
+	grid-column: 6 / 7;
+	grid-row: 6 / 7;
+}
+
+#Wordguess {
+	grid-column: 8 / 9;
+	grid-row: 6 / 7;
 }
 
 .Title-Box {

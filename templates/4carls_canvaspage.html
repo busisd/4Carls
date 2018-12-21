@@ -2,24 +2,43 @@
 <html style="background-color: #EEEEFF">
 <head>
 	<title>4Carls</title>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='4carls_canvaspage.css') }}" />
+	<script type="text/javascript"> var port = {{ port }} </script>
+	<script type="text/javascript"> var api_port = {{ api_port }} </script>
 	<script type="text/javascript" src="{{ url_for('static', filename='4carls_canvaspage.js') }}" defer></script>
 	<link rel="shortcut icon" href="#" />
+	
+	
 </head>
 
 <body>
 	<div id="box" style="width:500px; height:500px;">
-		
+
 	</div>
 	
 	<br>
 	
-	<!-- <div style="display: inline-block;"> -->
-		<!-- <div class="colorbutton" style="background-color: blue; width:40px; height:20px;float:left;"></div> -->
-		<!-- <div class="colorbutton" style="background-color: red; width:40px; height:20px;float:left;"></div> -->
-		<!-- <div class="colorbutton" style="background-color: green; width:40px; height:20px;float:left;"></div> -->
-		<!-- <div class="colorbutton" style="background-color: orange; width:40px; height:20px;float:left;"></div> -->
-	<!-- </div> -->
+	<div style="display: inline-block;">
+		<div class="Color-Button" red=255 green=255 blue=255></div>
+		<div class="Color-Button" red=127 green=127 blue=127></div>
+		<div class="Color-Button" red=200 green=200 blue=200></div>
+		<div class="Color-Button" red=0 green=0 blue=0></div>
+		<div class="Color-Button" red=255 green=0 blue=0></div>
+		<div class="Color-Button" red=255 green=180 blue=255></div>
+		<div class="Color-Button" red=255 green=200 blue=0></div>
+		<div class="Color-Button" red=160 green=106 blue=66></div>
+		<div class="Color-Button" red=255 green=255 blue=0></div>
+		<div class="Color-Button" red=0 green=255 blue=0></div>
+		<div class="Color-Button" red=136 green=255 blue=136></div>
+		<div class="Color-Button" red=0 green=0 blue=255></div>
+		<div class="Color-Button" red=140 green=140 blue=255></div>
+		<div class="Color-Button" red=136 green=186 blue=255></div>
+		<div class="Color-Button" red=224 green=148 blue=255></div>
+		<div class="Color-Button" red=170 green=80 blue=170></div>
+	</div>
 
+	<br>
+	
 	<div id="slidercontainer">
 		<input type="range" min="0" max="255" value="255" class="slider" id="rRange">
 		<span>R: <span id="rSpan"></span></span><br>
@@ -28,7 +47,20 @@
 		<input type="range" min="0" max="255" value="255" class="slider" id="bRange">
 		<span>B: <span id="bSpan"></span></span><br>
 	</div>
+	
 	<div id="colorshow" style="width:100px; height:40px;">
+	</div>
+	
+	<br>
+	
+	<div id="Save-Load-Buttons">
+		<button id="Save-Button"> Save </button>
+		<button id="Load-Button"> Load </button>
+	</div>
+	
+	<div id="Upload-Download-Buttons">
+		<button id="Upload-Button"> Upload </button>
+		<button id="Download-Button"> Download </button>
 	</div>
 </body>
 

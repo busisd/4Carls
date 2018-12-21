@@ -1,0 +1,21 @@
+body {
+	background-color:#EEEEFF;
+}
+
+.Post-Box {
+	display:table;
+	min-width:400px;
+	max-width:70%;
+	margin:10px;
+	padding:10px;
+	border:1px solid #a4a4da;
+	border-left:none;
+	border-top:none;
+	background-color:#DDDDFF;
+}
+
+.Color-Button {
+	width:20px;
+	height:20px;
+	float:left;
+}

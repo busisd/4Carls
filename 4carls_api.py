@@ -7,6 +7,7 @@ import flask
 import psycopg2
 import json
 import sys
+from flask import jsonify, request
 
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__))+'/../Config')
 import psql_config
@@ -27,6 +28,9 @@ def get_connection():
 @app.after_request
 def set_headers(response):
 	response.headers['Access-Control-Allow-Origin'] = '*'
+	response.headers["Access-Control-Allow-Methods"]=["GET","POST","PUT","DELETE","OPTIONS"]
+	response.headers["Access-Control-Allow-Headers"]="Content-Type"
+
 	return response
 
 @app.route('/')
@@ -98,6 +102,46 @@ def return_post_count():
 		connection.close()
 	return json.dumps({'post_count':post_count[0]})
 
+@app.route('/upload_canvas', methods=['POST'])
+def upload_canvas():
+	connection = get_connection()
+	cursor = connection.cursor()
+	pixel_data = request.get_json()
+	if connection is not None:
+		try:
+			cursor.execute('DELETE FROM canvas')
+		except Exception as e:
+			print(e, file=sys.stderr)			
+	
+		query = '''INSERT INTO canvas (pixel_name, pixel_color)
+			VALUES (%s, %s)
+		'''
+		for pixel_name in pixel_data.keys():
+			try:
+				cursor.execute(query,[pixel_name, pixel_data[pixel_name]])
+			except Exception as e:
+				print(e, file=sys.stderr)
+		connection.commit()
+		connection.close()
+	return jsonify("Canvas uploaded!")
+
+@app.route('/download_canvas')
+def download_canvas():
+	connection = get_connection()
+	pixel_data = {}
+	if connection is not None:
+		try:
+			cursor = connection.cursor()
+			query = 'SELECT * FROM canvas'
+			cursor.execute(query)
+			for row in cursor:
+				pixel_name = str(row[0])
+				pixel_color = str(row[1])
+				pixel_data[pixel_name] = pixel_color
+		except Exception as e:
+			print(e, file=sys.stderr)
+		connection.close()
+	return json.dumps(pixel_data)
 	
 if __name__ == '__main__':
 	if len(sys.argv) != 3:

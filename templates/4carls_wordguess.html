@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title> 4Carls Wordguess </title>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='4carls_frontpage.css') }}" />
+	<script type="text/javascript"> var port = {{ port }} </script>
+	<script type="text/javascript" src="{{ url_for('static', filename='4carls_wordguess.js') }}" defer></script>
+	<link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+
+	<h2> Guess the secret phrase! </h2>
+	
+	<form id="Guess-Form" autocomplete="off">
+		<label for="Word-One"> Guess for word one: </label>
+		<input type="text" name="First-Word" id="Word-One"><br>
+		<label for="Word-Two"> Guess for word two: </label>
+		<input type="text" name="Second-Word" id="Word-Two"><br>
+		<label for="Word-Three"> Guess for word three: </label>
+		<input type="text" name="Third-Word" id="Word-Three"><br><br>
+		<input type="submit" value="Submit Guesses">
+	</form>
+	<br>
+	<span id="Guess-Results"> Results: Nothing yet... </span>
+	
+</body>
+
+</html>
