@@ -56,7 +56,7 @@ def wordguess_makeguess():
 	final_string = ""
 	guesses = [word_one, word_two, word_three]
 	correct = ["you've", "been", "gnomed"]
-	if guesses[0] == correct[0] and guesses[1] == correct[1] and guesses[2] == correct[2]:
+	if guesses[0].lower() == correct[0] and guesses[1].lower() == correct[1] and guesses[2].lower() == correct[2]:
 		return jsonify("All correct!")
 	
 	for i in range(0,3):
