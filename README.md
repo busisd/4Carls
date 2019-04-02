@@ -12,3 +12,5 @@ It consists of a few pages:
  - A page that automatically plays an embedded YouTube video
  - Links to my github and some projects I've made
  - A word guessing game, that hides information on the backend so that users can't cheat by inspecting the page code.
+ 
+ Runs alongside an API linked to a PSQL database in which forum post and pictures drawn on the canvas are stored.
